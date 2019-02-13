@@ -1,0 +1,14 @@
+<%= simple_form_for(@space) do |f| %>
+  <% if @space.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @space.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.submit "submit space", class: "btn btn-primary" %>
+<% end %>
