@@ -18,9 +18,7 @@ class SpacesController < ApplicationController
     end
   end
 
-  def show
-    @space = Space.new(space_params)
-  end
+  def show; end
 
   def edit; end
 
