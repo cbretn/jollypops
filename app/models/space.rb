@@ -3,4 +3,7 @@
 class Space < ApplicationRecord
   validates :name, presence: true
   validates :location, presence: true, uniqueness: true
+
+  belongs_to :user
+  has_many :bookings
 end
