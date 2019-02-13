@@ -1,5 +1,7 @@
 <h1><%= @space.name %></h1>
-<p><%= @space.location %></p>
-<%= link_to "edit space", edit_space_path(@space) %>
+<p>Location: <%= @space.location %></p>
+<p>Price: <%= @space.price %></p>
+<p>Description: <%= @space.description %></p>
+<%= link_to "edit space", edit_space_path(@space) %> <br>
 <%= link_to "delete space", space_path(@space), method: :delete %>
 
