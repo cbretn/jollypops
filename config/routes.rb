@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'bookings/index'
+  get 'bookings/new'
+  get 'bookings/create'
+  get 'bookings/show'
   devise_for :users
   resources :spaces do
 
