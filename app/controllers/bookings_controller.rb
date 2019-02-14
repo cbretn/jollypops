@@ -1,10 +1,12 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show]
   def index
+    @space = Space.find(params[:space_id])
     @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
   def new
+    @space = Space.find(params[:space_id])
     @booking = Booking.new
     authorize @booking
   end
@@ -12,9 +14,11 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @space = Space.find(params[:space_id])
+    @booking.space = @space
     authorize @booking
     if @booking.save
-      redirect_to bookings_path
+      redirect_to bookings_path(@booking)
     else
       render :new
     end

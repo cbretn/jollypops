@@ -1,7 +1,8 @@
 class Booking < ApplicationRecord
-  validates :check_in, presence: true, uniqueness: true
-  validates :check_out, presence: true, uniqueness: true
-  has_many :bookings
-  belongs_to :user_id
+  validates :check_in, presence: true
+  validates :check_out, presence: true
+  validates :space_id, presence: true
+  validates :user_id, presence: true
+  belongs_to :user
   belongs_to :space
 end
