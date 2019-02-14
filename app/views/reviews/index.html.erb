@@ -1,0 +1,8 @@
+<h1>Reviews</h1>
+<% @reviews.each do |review| %>
+
+<p><%= review.content %></p3>
+<p>written by <%= review.user.email %> on <%= review.created_at %></p>
+<% end %>
+<%= link_to "Add a review", new_space_review_path(@space) %>
+<%= link_to "Back to space", space_path(@space) %>

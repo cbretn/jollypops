@@ -25,6 +25,7 @@ class SpacesController < ApplicationController
 
   def show
     authorize @space
+    @reviews = Review.where(space_id: @space)
   end
 
   def edit
