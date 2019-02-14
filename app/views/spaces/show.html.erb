@@ -2,6 +2,10 @@
 <p>Location: <%= @space.location %></p>
 <p>Price: <%= @space.price %></p>
 <p>Description: <%= @space.description %></p>
-<%= link_to "edit space", edit_space_path(@space) %> <br>
-<%= link_to "delete space", space_path(@space), method: :delete %>
+<% if policy(@space).edit? %>
+  <%= link_to "edit space", edit_space_path(@space) %> <br>
+<% end %>
+<% if policy(@space).destroy? %>
+  <%= link_to "delete space", space_path(@space), method: :delete %>
+<% end %>
 
