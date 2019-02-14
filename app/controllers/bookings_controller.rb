@@ -1,12 +1,12 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:new, :show]
+  before_action :set_booking, only: [:show]
   def index
     @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
   def new
     @booking = Booking.new
-    authorise @booking
+    authorize @booking
   end
 
   def create
