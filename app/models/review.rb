@@ -4,4 +4,5 @@ class Review < ApplicationRecord
   validates :user_id, presence: true
 
   belongs_to :space
+  belongs_to :user
 end

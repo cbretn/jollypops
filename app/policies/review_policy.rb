@@ -1,7 +1,7 @@
 class ReviewPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      @scope.where(space: @space)
+      scope.all
     end
   end
 
@@ -9,27 +9,11 @@ class ReviewPolicy < ApplicationPolicy
     true
   end
 
-  def show?
-    true
-  end
-
-  def create?
-    true
-  end
-
   def new?
     create?
   end
 
-  def update?
-    record.user == user
-  end
-
-  def edit?
-    update?
-  end
-
-  def destroy?
-    record.user == user
+  def create?
+    true
   end
 end

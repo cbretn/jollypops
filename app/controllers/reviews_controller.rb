@@ -1,23 +1,31 @@
 class ReviewsController < ApplicationController
   def index
     @space = Space.find(params[:space_id])
-    @reviews = policy_scope(Review).order(created_at: :desc)
-    @reviews = Review.where(space_id: @space)
+    @reviews = policy_scope(Review).where(space: @space)
   end
 
   def new
     @review = Review.new
     @space = Space.find(params[:space_id])
+    authorize @review
   end
 
   def create
-    @review = Dose.new(dose_params)
-    @review.space = Space.find(params[:space_id])
+    @review = Review.new(review_params)
+    @space = Space.find(params[:space_id])
+    @review.space = @space
     @review.user = current_user
+    authorize @review
     if @review.save!
       redirect_to space_path(@space)
     else
       render :new
     end
+  end
+
+  private
+
+  def review_params
+    params.require(:review).permit(:content)
   end
 end
