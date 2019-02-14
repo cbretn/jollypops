@@ -2,15 +2,20 @@ class SpacesController < ApplicationController
   before_action :set_space, only: [:show, :edit, :update, :destroy]
 
   def index
-    @spaces = Space.all
+    @spaces = policy_scope(Space).order(created_at: :desc)
+    # authorize @space
+    # @spaces = Space.all
   end
 
   def new
     @space = Space.new
+    authorize @space
   end
 
   def create
     @space = Space.new(space_params)
+    @space.user = current_user
+    authorize @space
     if @space.save
       redirect_to spaces_path
     else
@@ -18,11 +23,16 @@ class SpacesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    authorize @space
+  end
 
-  def edit; end
+  def edit
+    authorize @space
+  end
 
   def update
+    authorize @space
     if @space.update(space_params)
       redirect_to space_path(@space)
     else
@@ -31,6 +41,7 @@ class SpacesController < ApplicationController
   end
 
   def destroy
+    authorize @space
     @space.destroy
     redirect_to spaces_path
   end
