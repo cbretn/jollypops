@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show]
   def index
+    @space = Space.find(params[:space_id])
     @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
