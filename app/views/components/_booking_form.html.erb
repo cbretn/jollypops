@@ -1,0 +1,16 @@
+
+
+<%= simple_form_for([@space, @booking]) do |f| %>
+  <% if @booking.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @space.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.input :check_in %>
+  <%= f.input :check_out %>
+  <%= f.submit "submit booking", class: "btn btn-primary" %>
+<% end %>

@@ -18,13 +18,14 @@ class BookingsController < ApplicationController
     @booking.space = @space
     authorize @booking
     if @booking.save
-      redirect_to bookings_path(@booking)
+      redirect_to space_booking_path(@space.id, @booking.id)
     else
       render :new
     end
   end
 
   def show
+    @space = Space.find(params[:space_id])
     authorize @booking
   end
 
