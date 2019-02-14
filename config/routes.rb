@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'reviews/index'
+  get 'reviews/new'
+  get 'reviews/create'
   devise_for :users
   resources :spaces do
 
