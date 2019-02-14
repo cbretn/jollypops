@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
   def index
+    @space = Space.find(params[:space_id])
+    @reviews = policy_scope(Review).order(created_at: :desc)
     @reviews = Review.where(space_id: @space)
   end
 
