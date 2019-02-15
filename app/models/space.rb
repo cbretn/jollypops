@@ -8,5 +8,7 @@ class Space < ApplicationRecord
 
   belongs_to :user
   has_many :reviews, dependent: :destroy
+
+  mount_uploader :photo, PhotoUploader
   # has_many :bookings
 end

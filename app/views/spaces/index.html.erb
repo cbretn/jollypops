@@ -3,7 +3,7 @@
 <% @spaces.each do |space| %>
   <%= link_to space_path(space) do %>
     <li>Name: <%= space.name %></li>
-
+    <li><%= cl_image_tag space.photo, height: 300, width: 400, crop: :fill %></li>
   <% end %>
 <% end %>
 </ul>
