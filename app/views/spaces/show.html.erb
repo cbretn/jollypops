@@ -1,4 +1,5 @@
 <h1><%= @space.name %></h1>
+<p><%= cl_image_tag @space.photo, height: 300, width: 400, crop: :fill %></p>
 <p>Location: <%= @space.location %></p>
 <p>Price: <%= @space.price %></p>
 <p>Description: <%= @space.description %></p>
@@ -9,3 +10,4 @@
   <%= link_to "delete space", space_path(@space), method: :delete %>
 <% end %>
 <%= link_to "check reviews", space_reviews_path(@space) %>
+<li><%= link_to "Make a booking", new_space_booking_path(@space) %> </li>

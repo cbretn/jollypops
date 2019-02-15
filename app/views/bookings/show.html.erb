@@ -1,2 +1,26 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<div class="main-container">
+
+  <div class="space-info">
+<!--     <div class="banner banner-large">  -->
+      <%= cl_image_tag @space.photo, class: "banner" %>
+
+<!--     </div> -->
+    <div class="confirmation-container">
+
+      <h1><%= @space.name %></h1>
+      <p>Location: <%= @space.location %></p>
+      <p>Price: <%= @space.price %></p>
+      <p>Description: <%= @space.description %></p>
+      <p>Check in: <%= @booking.check_in %></p>
+      <p>Check out: <%= @booking.check_out %></p>
+    </div>
+
+    <a href=""><%= link_to "back to homepage", root_path %></a>
+  </div>
+
+  <div id="map">
+    <h1>map insert here</h1>
+  </div>
+
+</div>
+
