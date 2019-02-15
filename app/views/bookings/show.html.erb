@@ -1,7 +1,10 @@
 <div class="main-container">
 
   <div class="space-info">
-    <div class="banner"> picture to space link here</div>
+<!--     <div class="banner banner-large">  -->
+      <%= cl_image_tag @space.photo, class: "banner" %>
+
+<!--     </div> -->
     <div class="confirmation-container">
 
       <h1><%= @space.name %></h1>
