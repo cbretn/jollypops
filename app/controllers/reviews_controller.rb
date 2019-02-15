@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @space = Space.find(params[:space_id])
     @reviews = policy_scope(Review).where(space: @space)
