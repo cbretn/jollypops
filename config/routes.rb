@@ -2,11 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   resources :spaces do
 
-    resources :bookings, only: [:index, :new, :create, :show] do
-      resources :messages, only: [:index, :create]
-    end
+    resources :bookings, only: [:index, :new, :create, :show]
 
     resources :reviews, only: [:index, :new, :create]
+  end
+
+  resources :bookings, only: [] do
+    resources :messages, only: [:index, :create]
   end
 
   root to: 'pages#home'

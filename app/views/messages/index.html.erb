@@ -1,0 +1,18 @@
+<h1>Messages for the booking at <%= @booking.space.name %></h1>
+
+<% @messages.each do |message| %>
+<div class="notification">
+  <h4>From: <%= message.from.email %></h4>
+  <div class="notification-content">
+    <p>Message: <%= message.content  %> </p>
+  </div>
+</div>
+<% end %>
+
+<div class="message_form">
+  <%= simple_form_for [@booking, @message] do |f|%>
+    <%= f.input :content %>
+    <%= f.input :to, collection: User.all %>
+    <%= f.submit %>
+  <% end %>
+</div>

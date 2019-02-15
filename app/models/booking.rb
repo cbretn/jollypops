@@ -5,4 +5,6 @@ class Booking < ApplicationRecord
   validates :user_id, presence: true
   belongs_to :user
   belongs_to :space
+
+  has_many :messages
 end
