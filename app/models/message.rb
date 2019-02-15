@@ -1,7 +1,7 @@
 class Message < ApplicationRecord
   belongs_to :booking
-  belongs_to :user_id, through: :bookings
-  belongs_to :user_id, through: :spaces
+  belongs_to :from, class_name: "User"
+  belongs_to :to, class_name: "User"
 
   validates :content, presence: true
 end
