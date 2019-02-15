@@ -1,4 +1,5 @@
 <h1><%= @space.name %></h1>
+<p><%= cl_image_tag @space.photo, height: 300, width: 400, crop: :fill %></p>
 <p>Location: <%= @space.location %></p>
 <p>Price: <%= @space.price %></p>
 <p>Description: <%= @space.description %></p>
