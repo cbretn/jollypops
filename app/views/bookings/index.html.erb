@@ -1,8 +1,8 @@
 <h1>Your bookings</h1>
 
 <ul>
-  <% @spaces.each do |booking| %>
-    <li> <%= booking.name %></li>
+  <% @bookings.each do |booking| %>
+    <li> <%= booking.space.name %></li>
   <% end %>
 </ul>
 <br>
