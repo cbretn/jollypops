@@ -1,10 +1,34 @@
 <h1>Your bookings</h1>
 
-<ul>
-  <% @bookings.each do |booking| %>
-    <li> <%= booking.space.name %></li>
-  <% end %>
-</ul>
-<br>
 
 <%= link_to "Back to home", root_path %>
+
+<div class="container">
+    <!-- <div class="col-xs-12 col-sm-4"> -->
+
+  <div class="row">
+      <% @bookings.each do |booking| %>
+
+      <%= link_to space_booking_path(booking.space, booking) do %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+          <div class="card-category"></div>
+          <div class="card-description">
+            <h2><%= booking.space.name %></h2>
+            <p>Check in date: <%= booking.check_in %></p>
+            <p>Check out date: <%= booking.check_out %></p>
+          </div>
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        </div>
+      <% end %>
+
+  <% end %>
+        <%#= link_to root_path %>
+
+
+      <!-- insert <div class="card"> -->
+    <!-- </div> -->
+  </div>
+</div>
+
+<!-- space_booking_path(booking)
+ -->
