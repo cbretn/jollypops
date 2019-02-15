@@ -1,2 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="main-banner" class="darken-overlay">
+  <div class="darken-overlay">
+      <div class="main-banner-container">
+        <div class="wrapper">
+          <h2>Pop-up locations for every occasion</h2><br><br><br><br>
+          <p>Search in our wide selection of spaces in the busiest neighbourhoods</p><br>
+          <div class="main-search">
+            <form class="form-inline">
+              <label class="sr-only">City</label>
+              <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Paris">
+              <label class="sr-only" for="inlineFormInputName2">Dates</label>
+              <input type="date" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="01/01/2019">
+              <label class="sr-only" for="inlineFormInputName2">Dates</label>
+              <input type="date" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="01/01/2019">
+              <%= link_to "submit", spaces_path, class: "btn btn-primary" %>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
