@@ -2,7 +2,7 @@
 
 <% @messages.each do |message| %>
 <div class="notification">
-  <h4>From: <%= message.from.email %></h4>
+    <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
   <div class="notification-content">
     <p>Message: <%= message.content  %> </p>
   </div>
@@ -16,3 +16,5 @@
     <%= f.submit %>
   <% end %>
 </div>
+
+<%= link_to "back to booking", space_booking_path(@booking.space, @booking ) %>
