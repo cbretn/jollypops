@@ -1,8 +1,14 @@
 .tags-list {
   display: inline;
+  list-style: none;
 }
 
 .tag {
   background-color: grey;
   font-weight: lighter;
+  border: solid 1px white;
+  padding: 1px;
+  width: 70px;
+  text-align: center;
+  border-radius: 10px;
 }

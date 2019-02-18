@@ -18,14 +18,23 @@
         <div class="dropdown">
           <div class="navbar-wagon-link" data-toggle= "dropdown">Messages</div>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <% @bookings.each do |booking| %>
-            <li>
-              <%= link_to booking_messages_path(booking) do %>
-                <%= booking.space.name %>
+            <% if @bookings.nil? %>
+              <li>You have no bookings or messages yet</li>
+            <% else %>
+              <% @bookings.each do |booking| %>
+              <li>
+                <%= link_to booking_messages_path(booking) do %>
+                  <%= booking.space.name %>
+                <% end %>
+              </li>
               <% end %>
-            </li>
+<!--               <%# current_user.spaces.each do |space| %>
+              <li>
+                <%#= link_to booking_messages_path(space.bookings.first.id) %>
+                  <%#= space.name %>
+                <%# end %>
+              </li> -->
             <% end %>
-          </ul>
         </div>
       </div>
 
