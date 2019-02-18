@@ -6,6 +6,11 @@ class SpacesController < ApplicationController
     @spaces = policy_scope(Space).order(created_at: :desc)
     # authorize @space
     # @spaces = Space.all
+    @markers = @spaces.map do |space|
+      {
+        lng: space.longitude,
+        lat: space.latitude
+      }
   end
 
   def new
