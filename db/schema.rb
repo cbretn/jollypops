@@ -35,7 +35,16 @@ ActiveRecord::Schema.define(version: 2019_02_15_052000) do
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_messages_on_booking_id"
     t.index ["from_id"], name: "index_messages_on_from_id"
-    t.index ["to_id"], name: "index_messages_exx_reviews_on_space_id"
+    t.index ["to_id"], name: "index_messages_on_to_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "space_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["space_id"], name: "index_reviews_on_space_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
