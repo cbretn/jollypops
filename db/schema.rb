@@ -36,7 +36,8 @@ ActiveRecord::Schema.define(version: 2019_02_18_025305) do
     t.index ["booking_id"], name: "index_messages_on_booking_id"
     t.index ["from_id"], name: "index_messages_on_from_id"
     t.index ["to_id"], name: "index_messages_on_to_id"
-  en
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.text "content"
     t.bigint "space_id"
