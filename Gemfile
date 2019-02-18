@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
 
+gem 'greensock-rails', '~> 1.18', '>= 1.18.2.0'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'pundit'
