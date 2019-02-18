@@ -21,3 +21,15 @@ new_message = Message.new(
 )
 
 new_message.save
+
+Tag.create!(title: "outdoor")
+Tag.create!(title: "kitchen")
+Tag.create!(title: "wifi")
+Tag.create!(title: "ground floor")
+Tag.create!(title: "sound system")
+Tag.create!(title: "balcony")
+Tag.create!(title: "non-smoking")
+Tag.create!(title: "toilets")
+Tag.create!(title: "natural light")
+Tag.create!(title: "running water")
+Tag.create!(title: "AC")

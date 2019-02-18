@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
   end
 
+  resources :space_tags, only: [:index, :new, :create]
+
   get '/bookings', to: 'bookings#user'
 
   root to: 'pages#home'
