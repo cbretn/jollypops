@@ -1,10 +1,14 @@
 <h1>Messages for the booking at <%= @booking.space.name %></h1>
 
 <% @messages.each do |message| %>
-<div class="notification">
-    <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+  <% if message.from.id == current_user.id %>
+    <div class="notification-from">
+  <% else %>
+    <div class="notification-to">
+  <% end %>
+    <%= cl_image_tag message.from.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
   <div class="notification-content">
-    <p>Message: <%= message.content  %> </p>
+    <p><%= message.content  %> </p>
   </div>
 </div>
 <% end %>
@@ -12,9 +16,7 @@
 <div class="message_form">
   <%= simple_form_for [@booking, @message] do |f|%>
     <%= f.input :content %>
-    <%= f.input :to, collection: User.all %>
     <%= f.submit %>
   <% end %>
 </div>
-
 <%= link_to "back to booking", space_booking_path(@booking.space, @booking ) %>
