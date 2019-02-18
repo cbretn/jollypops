@@ -1,19 +1,15 @@
-<h1>All spaces</h1>
-
-<%= link_to "Add Space", new_space_path %>
-
 <div class="container">
-
+  <h1>All spaces</h1>
+  <%= link_to "Add Space", new_space_path, :class => "btn-medium" %>
   <div class="row">
         <% @spaces.each do |space| %>
           <div class="col-xs-12 col-sm-6 col-md-4">
           <%= link_to space_path(space) do %>
-          <%#= cl_image_tag space.photo, height: 300, width: 400, crop: :fill %>
+
             <div class="card-spaces" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url( <%= image_path space.photo %> );">
               <div class="card-category"></div>
               <div class="card-description">
                 <h2><%= space.name %></h2>
-
               </div>
               <img class="card-user">
             </div>
@@ -22,4 +18,4 @@
       <% end %>
   </div>
 </div>
-<%#= cl_image_tag @space.photo, class: “banner” %>
+
