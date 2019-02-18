@@ -8,6 +8,8 @@
   margin: 50px;
 
   margin-bottom: 10px;
+  border-radius: 10%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .card-small {
@@ -27,12 +29,13 @@
   top: 15px;
   width: 40px;
   border-radius: 49%;
+  margin: 20px;
 }
 .card-category {
   position: absolute;
   top: 10px;
   left: 10px;
-  font-size: 15px;
+  font-size: 24px;
   text-transform: uppercase;
 }
 .card-description {
