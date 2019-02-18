@@ -35,6 +35,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def user
+    @bookings = Booking.where(user_id: current_user)
+    authorize @bookings
+  end
+
  private
 
   def set_booking

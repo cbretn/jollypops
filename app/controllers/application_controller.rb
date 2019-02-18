@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   before_action :authenticate_user!
+
+  before_action :set_bookings
+
   include Pundit
 
   # Pundit: white-list approach.
@@ -23,6 +26,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def set_bookings
+    @bookings = current_user.bookings
+  end
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/

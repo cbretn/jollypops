@@ -6,10 +6,17 @@
   color: white;
   position: relative;
   margin: 50px;
+  margin-bottom: 10px;
+}
+
+.card-small {
+  width: 500px;
+  background-size: cover;
 }
 
 .card-background {
   height: 175px;
+  width: 100%;
 }
 .card-user {
   position: absolute;
