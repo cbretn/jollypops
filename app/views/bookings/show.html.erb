@@ -7,17 +7,21 @@
 
 <!--     </div> -->
     <div class="container">
+      <div class="container-booking">
 
-      <h1><%= @space.name %></h1>
-      <p>Location: <%= @space.location %></p>
-      <p>Price: <%= @space.price %></p>
-      <p>Description: <%= @space.description %></p>
-      <p>Check in: <%= @booking.check_in %></p>
-      <p>Check out: <%= @booking.check_out %></p>
+        <h1><%= @space.name %></h1>
+        <p>Location: <%= @space.location %></p>
+        <p>Price: <%= @space.price %></p>
+        <p>Description: <%= @space.description %></p>
+        <p>Check in: <%= @booking.check_in %></p>
+        <p>Check out: <%= @booking.check_out %></p>
+        <br><br><br>
+      </div>
     </div>
-
-    <a href=""><%= link_to "back to homepage", root_path, :class => "btn-medium" %></a>
-    <%= link_to "see messages", booking_messages_path(@booking.id), :class => "btn-medium" %>
+    <div class="continer-center">
+      <a href=""><%= link_to "back to homepage", root_path, :class => "btn-medium" %></a>
+      <%= link_to "see messages", booking_messages_path(@booking.id), :class => "btn-medium" %>
+    </div>
   </div>
 
   <div
