@@ -1,12 +1,10 @@
-<h1>Your bookings</h1>
-
-<%= link_to "Back to home", root_path %>
-
+<h2>My Bookings</h2>
 <div class="container">
-
   <div class="row">
+    <div class="col-md-6">
     <% @bookings.each do |booking| %>
       <%= render "booking-card", booking: booking %>
     <% end %>
+    </div>
   </div>
 </div>

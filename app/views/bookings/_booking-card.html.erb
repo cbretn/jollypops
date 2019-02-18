@@ -1,0 +1,13 @@
+<%= link_to space_booking_path(booking.space, booking) do %>
+  <div class="card card-small">
+<!--          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');"> -->
+  <%= cl_image_tag booking.space.photo, class: "card-background" %>
+    <div class="card-category"></div>
+    <div class="card-description">
+      <h2><%= booking.space.name %></h2>
+      <p>Check in date: <%= booking.check_in %></p>
+      <p>Check out date: <%= booking.check_out %></p>
+    </div>
+    <%= cl_image_tag booking.space.user.photo, class: "card-user" %>
+  </div>
+<% end %>
