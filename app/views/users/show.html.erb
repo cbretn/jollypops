@@ -1,18 +1,17 @@
 <div class="container">
 
-  <div class="profile-container">
-    <%= cl_image_tag @user.photo, class: "avatar-lg" %>
+<div class="prof-card-product">
+  <%= cl_image_tag @user.photo, class: "avatar-lg" %>
+  <div class="prof-card-product-infos">
+    <p>
     <%= link_to "Edit Details", edit_user_registration_path %>
-
+    </p>
+    <p>
     <%= link_to "Add Space", new_space_path %>
+    </p>
+    <p>
     <%= link_to "Home", root_path %>
-  </div>
-
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-  <div class="card-product-infos">
-    <h2>Product name</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
+    </p>
   </div>
 </div>
 
