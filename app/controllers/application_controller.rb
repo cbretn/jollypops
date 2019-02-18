@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_bookings
-    @bookings = current_user.bookings
+    @bookings = current_user.bookings if current_user
   end
 
   def skip_pundit?

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'space_tags/index'
+  get 'space_tags/new'
+  get 'space_tags/create'
   devise_for :users
   resources :users, only: [:show]
   resources :spaces do
@@ -12,6 +15,8 @@ Rails.application.routes.draw do
   resources :bookings, only: [] do
     resources :messages, only: [:index, :create]
   end
+
+  resources :space_tags, only: [:index, :new, :create]
 
   get '/bookings', to: 'bookings#user'
 

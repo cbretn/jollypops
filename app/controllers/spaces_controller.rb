@@ -33,6 +33,7 @@ class SpacesController < ApplicationController
   def show
     authorize @space
     @reviews = Review.where(space_id: @space)
+    @spacetags = SpaceTag.where(space_id: @space)
     @markers = [@space].map do |space|
       {
         lng: space.longitude,

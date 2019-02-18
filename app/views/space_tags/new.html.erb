@@ -1,0 +1,18 @@
+<h1>SpaceTags#new</h1>
+<p>Find me in app/views/space_tags/new.html.erb</p>
+<%= simple_form_for(@spacetag) do |f| %>
+      <% if @spacetag.errors.any? %>
+        <div class="errors-container">
+          <ul>
+            <% @spacetag.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= f.association :space %>
+      <%= f.association :tag %>
+      <%#= f.input :space %>
+      <%#= f.input :tag %>
+      <%= f.submit "submit space", class: "btn btn-primary" %>
+    <% end %>
