@@ -27,6 +27,12 @@ class BookingsController < ApplicationController
   def show
     @space = Space.find(params[:space_id])
     authorize @booking
+    @markers = [@space].map do |space|
+      {
+        lng: space.longitude,
+        lat: space.latitude
+      }
+    end
   end
 
  private
