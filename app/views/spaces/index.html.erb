@@ -1,6 +1,6 @@
-<h1>All spaces</h1>
-
-<%= link_to "Add Space", new_space_path %>
+<div class="container">
+  <h1>All spaces</h1>
+  <%= link_to "Add Space", new_space_path, :class => "btn-medium" %>
 
 <div class="container">
 
@@ -11,23 +11,31 @@
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
-
+ 
   <div class="row">
-        <% @spaces.each do |space| %>
-          <div class="col-xs-12 col-sm-6 col-md-4">
-          <%= link_to space_path(space) do %>
-          <%#= cl_image_tag space.photo, height: 300, width: 400, crop: :fill %>
-            <div class="card-spaces" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url( <%= image_path space.photo %> );">
-              <div class="card-category"></div>
-              <div class="card-description">
-                <h2><%= space.name %></h2>
+    <% @spaces.each do |space| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+      <%= link_to space_path(space) do %>
 
-              </div>
-              <img class="card-user">
-            </div>
+      <!-- Post-->
+      <div class="post-module">
+        <!-- Thumbnail-->
+        <div class="thumbnail" >
+          <div class="date">
+
+          </div><img src="<%= space.photo %>"/>
+        </div>
+        <!-- Post Content-->
+        <div class="post-content">
+          <div class="category">Click for more info</div>
+          <h1 class="title"><%= space.name %></h1>
+          <h2 class="sub_title"></h2>
+          <p class="description"><%= space.description %></p>
+
           <% end %>
-    </div>
-      <% end %>
+        </div>
+      </div>
+      </div>
+    <% end %>
   </div>
 </div>
-<%#= cl_image_tag @space.photo, class: “banner” %>

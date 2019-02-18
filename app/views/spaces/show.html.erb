@@ -1,4 +1,5 @@
-<h1><%= @space.name %></h1>
+<div class="container">
+
 <div
   id="map"
   style="width: 100%;
@@ -6,15 +7,23 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
-<p><%= cl_image_tag @space.photo, height: 300, width: 400, crop: :fill %></p>
-<p>Location: <%= @space.location %></p>
-<p>Price: <%= @space.price %></p>
-<p>Description: <%= @space.description %></p>
-<% if policy(@space).edit? %>
-  <%= link_to "edit space", edit_space_path(@space) %> <br>
-<% end %>
-<% if policy(@space).destroy? %>
-  <%= link_to "delete space", space_path(@space), method: :delete %>
-<% end %>
-<%= link_to "check reviews", space_reviews_path(@space) %>
-<li><%= link_to "Make a booking", new_space_booking_path(@space) %> </li>
+
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @space.photo %>);">
+  <div class="card-category"></div>
+  <div class="card-description">
+    <h1><%= @space.name %></h1>
+    <p>Location: <%= @space.location %></p>
+    <p>Price: <%= @space.price %></p>
+    <p>Description: <%= @space.description %></p>
+  </div>
+  <% if policy(@space).edit? %>
+    <%= link_to "edit space", edit_space_path(@space) %> <br>
+  <% end %>
+  <% if policy(@space).destroy? %>
+    <%= link_to "delete space", space_path(@space), method: :delete %>
+  <% end %>
+
+  </div>
+  <%= link_to "check reviews", space_reviews_path(@space), :class => "btn-medium" %>
+  <%= link_to "Make a booking", new_space_booking_path(@space), :class => "btn-medium" %>
+</div>
