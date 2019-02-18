@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+
   devise_for :users
+  resources :users, only: [:show]
   resources :spaces do
 
     resources :bookings, only: [:index, :new, :create, :show]
