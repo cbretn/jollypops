@@ -11,6 +11,7 @@ class SpacesController < ApplicationController
         lng: space.longitude,
         lat: space.latitude
       }
+    end
   end
 
   def new
@@ -32,6 +33,12 @@ class SpacesController < ApplicationController
   def show
     authorize @space
     @reviews = Review.where(space_id: @space)
+    @markers = [@space].map do |space|
+      {
+        lng: space.longitude,
+        lat: space.latitude
+      }
+    end
   end
 
   def edit

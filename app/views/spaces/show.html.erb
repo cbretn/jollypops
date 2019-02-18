@@ -1,4 +1,11 @@
 <h1><%= @space.name %></h1>
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
 <p><%= cl_image_tag @space.photo, height: 300, width: 400, crop: :fill %></p>
 <p>Location: <%= @space.location %></p>
 <p>Price: <%= @space.price %></p>
