@@ -1,2 +1,19 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+
+  <div class="profile-container">
+    <%= cl_image_tag @user.photo, class: "avatar-lg" %>
+    <%= link_to "Edit Details", edit_user_registration_path %>
+
+    <%= link_to "Add Space", new_space_path %>
+    <%= link_to "Home", root_path %>
+  </div>
+
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+  <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+</div>
+
+</div>
