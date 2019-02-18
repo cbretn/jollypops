@@ -12,7 +12,11 @@ class MessagesController < ApplicationController
     @message.content = params[:message][:content]
     @message.booking = @booking
     @message.from = current_user
-    @message.to = User.find(params[:message][:to])
+    if @booking.space.user == current_user
+      @message.to = @booking.user
+    else
+      @message.to = @booking.space.user
+    end
     authorize @message
     @message.save
     if @message.save

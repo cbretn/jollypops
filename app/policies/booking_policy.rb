@@ -20,4 +20,8 @@ class BookingPolicy < ApplicationPolicy
   def new?
     create?
   end
+
+  def user?
+    true
+  end
 end
