@@ -1,19 +1,44 @@
-.notification {
+.notification-from {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: #CEFFC3;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+  border-radius: 10px;
+  width: 600px;
+  margin-left: auto;
+}
+
+.notification-to {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
   background: white;
   padding: 8px 16px;
   border: 1px solid rgb(235,235,235);
+  border-radius: 10px;
+  width: 600px;
+
 }
 
-.notification .notification-content {
+.notification-to .notification-content {
   flex-grow: 1;
   padding: 0 24px;
 }
 
-.notification p {
-  margin: 0;
+.notification-to p {
+  margin: 0, 10px;
+  line-height: 1.4;
+}
+
+.notification-from .notification-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.notification-from p {
+  margin: 0, 10px;
   line-height: 1.4;
 }
 
@@ -25,3 +50,4 @@
 .message_form {
   padding: 50px;
 }
+
