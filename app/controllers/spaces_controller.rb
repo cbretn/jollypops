@@ -11,10 +11,7 @@ class SpacesController < ApplicationController
     # authorize @space
     # @spaces = Space.all
     @markers = @spaces.map do |space|
-      {
-        lng: space.longitude,
-        lat: space.latitude
-      }
+      { lng: space.longitude, lat: space.latitude }
     end
   end
 
