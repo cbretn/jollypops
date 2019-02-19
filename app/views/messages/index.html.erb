@@ -1,5 +1,5 @@
 <div class="main-container">
-  <div class="container" id="message-container">
+  <div class="container message-container">
     <h1>Messages for the booking at <%= @booking.space.name %></h1>
     <% @messages.each do |message| %>
       <% if message.from.id == current_user.id %>
