@@ -1,5 +1,5 @@
 <div class="main-container">
-  <div class="container message-container" id="notifications">
+  <div class="container message-container">
     <h1>Messages for the booking at <%= @booking.space.name %></h1>
     <% @messages.each do |message| %>
       <% if message.from.id == current_user.id %>
@@ -13,14 +13,13 @@
       </div>
     </div>
     <% end %>
-  </div>
 
-  <div class="message_form">
-    <%= simple_form_for([@booking, @message], remote: true) do |f|%>
-      <%= f.input :content %>
-      <%= f.submit %>
-    <% end %>
-  </div>
-  <%= link_to "back to booking", space_booking_path(@booking.space, @booking),:class => 'btn-medium' %>
+    <div class="message_form">
+      <%= simple_form_for [@booking, @message] do |f|%>
+        <%= f.input :content %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+    <%= link_to "back to booking", space_booking_path(@booking.space, @booking),:class => 'btn-medium' %>
   </div>
 </div>
