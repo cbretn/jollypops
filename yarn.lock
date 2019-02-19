@@ -2827,6 +2827,11 @@ grid-index@^1.1.0:
   resolved "https://registry.yarnpkg.com/grid-index/-/grid-index-1.1.0.tgz#97f8221edec1026c8377b86446a7c71e79522ea7"
   integrity sha512-HZRwumpOGUrHyxO5bqKZL0B0GlUpwtCAzZ42sgxUPniu33R1LSFH5yrIcBCHjkctCAh3mtWKcKd9J4vDDdeVHA==
 
+gsap@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-2.1.0.tgz#f8ddd091a2fefc7defb19dd4e9b80bd36903d64c"
+  integrity sha512-InFn9MNrXwJF6C8MQ4jMFPlkyZX04Y1eBeOvbuYYIjPCfkHKGzl8ZQkvWm4ShlpchQ8VIi4nN/nnjs50o4nklQ==
+
 handle-thing@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/handle-thing/-/handle-thing-1.2.5.tgz#fd7aad726bf1a5fd16dfc29b2f7a6601d27139c4"
