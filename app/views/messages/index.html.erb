@@ -1,24 +1,25 @@
-<div class="container" id="message-container">
-  <h1>Messages for the booking at <%= @booking.space.name %></h1>
-  <% @messages.each do |message| %>
-    <% if message.from.id == current_user.id %>
-      <div class="notification-from">
-    <% else %>
-      <div class="notification-to">
-    <% end %>
-      <%= cl_image_tag message.from.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-    <div class="notification-content">
-      <p><%= message.content  %> </p>
+<div class="main-container">
+  <div class="container" id="message-container">
+    <h1>Messages for the booking at <%= @booking.space.name %></h1>
+    <% @messages.each do |message| %>
+      <% if message.from.id == current_user.id %>
+        <div class="notification-from">
+      <% else %>
+        <div class="notification-to">
+      <% end %>
+        <%= cl_image_tag message.from.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+      <div class="notification-content">
+        <p><%= message.content  %> </p>
+      </div>
     </div>
-  </div>
-  <% end %>
-
-  <div class="message_form">
-    <%= simple_form_for [@booking, @message] do |f|%>
-      <%= f.input :content %>
-      <%= f.submit %>
     <% end %>
-  </div>
-  <%= link_to "back to booking", space_booking_path(@booking.space, @booking),:class => 'btn-medium' %>
-</div>
 
+    <div class="message_form">
+      <%= simple_form_for [@booking, @message] do |f|%>
+        <%= f.input :content %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+    <%= link_to "back to booking", space_booking_path(@booking.space, @booking),:class => 'btn-medium' %>
+  </div>
+</div>
