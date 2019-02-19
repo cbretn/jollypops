@@ -1,20 +1,22 @@
 <div class="container">
   <h1>Messages for the booking at <%= @booking.space.name %></h1>
-  <% @messages.each do |message| %>
-    <% if message.from.id == current_user.id %>
-      <div class="notification-from">
-    <% else %>
-      <div class="notification-to">
-    <% end %>
-      <%= cl_image_tag message.from.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-    <div class="notification-content">
-      <p><%= message.content  %> </p>
+  <div id="notifications">
+    <% @messages.each do |message| %>
+      <% if message.from.id == current_user.id %>
+        <div class="notification-from">
+      <% else %>
+        <div class="notification-to">
+      <% end %>
+        <%= cl_image_tag message.from.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+      <div class="notification-content">
+        <p><%= message.content  %> </p>
+      </div>
     </div>
+    <% end %>
   </div>
-  <% end %>
 
   <div class="message_form">
-    <%= simple_form_for [@booking, @message] do |f|%>
+    <%= simple_form_for([@booking, @message], remote: true) do |f|%>
       <%= f.input :content %>
       <%= f.submit %>
     <% end %>
