@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
-  before_action :set_bookings
+  before_action :set_bookings, :set_booking_spaces
 
   include Pundit
 
@@ -29,6 +29,17 @@ class ApplicationController < ActionController::Base
 
   def set_bookings
     @bookings = current_user.bookings if current_user
+  end
+
+  def set_booking_spaces
+    @user_bookings = []
+    if current_user
+      current_user.spaces.each do |space|
+        space.bookings.each do |booking|
+          @user_bookings << booking
+        end
+      end
+    end
   end
 
   def skip_pundit?
