@@ -5,7 +5,7 @@
         <% @reviews.each do |review| %>
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="container-review">
-              <%= cl_image_tag current_user.photo, class: "avatar" %>
+              <%= cl_image_tag review.user.photo, class: "avatar" %>
               <p><%= review.content %></p3>
               <p>
                 Written by: <%= review.user.first_name %> <%= review.user.last_name %><br><%= review.created_at %>
