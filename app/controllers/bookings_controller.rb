@@ -30,7 +30,8 @@ class BookingsController < ApplicationController
     @markers = [@space].map do |space|
       {
         lng: space.longitude,
-        lat: space.latitude
+        lat: space.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { space: space })
       }
     end
   end
