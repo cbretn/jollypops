@@ -1,34 +1,34 @@
 <div class="main-container">
 
   <div class="space-info">
-    <div
-      id="map"
-      style="width: 100%;
-      height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
+
 <!--     <div class="banner banner-large">  -->
       <%= cl_image_tag @space.photo, class: "banner" %>
 
 <!--     </div> -->
-    <div class="confirmation-container">
+    <div class="container">
+      <div class="container-booking">
 
-      <h1><%= @space.name %></h1>
-      <p>Location: <%= @space.location %></p>
-      <p>Price: <%= @space.price %></p>
-      <p>Description: <%= @space.description %></p>
-      <p>Check in: <%= @booking.check_in %></p>
-      <p>Check out: <%= @booking.check_out %></p>
+        <h1><%= @space.name %></h1>
+        <p>Location: <%= @space.location %></p>
+        <p>Price: <%= @space.price %></p>
+        <p>Description: <%= @space.description %></p>
+        <p>Check in: <%= @booking.check_in %></p>
+        <p>Check out: <%= @booking.check_out %></p>
+        <br><br><br>
+      </div>
     </div>
-
-    <a href=""><%= link_to "back to homepage", root_path %></a>
-    <%= link_to "see messages", booking_messages_path(@booking.id) %>
+    <div class="continer-center">
+      <a href=""><%= link_to "back to homepage", root_path, :class => "btn-medium" %></a>
+      <%= link_to "see messages", booking_messages_path(@booking.id), :class => "btn-medium" %>
+    </div>
   </div>
 
-<!--   <div id="map">
-    <h1>map insert here</h1>
-  </div> -->
+  <div
+      id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
 
 </div>
 
