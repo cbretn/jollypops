@@ -62,12 +62,6 @@ puebla.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v15502
 puebla.user = charles
 puebla.save!
 
-mdm = Space.new(name: "My Dressmaker Showroom", location: "13 Rue de Charonne, 75011 Paris, France",
-  description: "blablabla", price: 400 )
-mdm.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550549844/mydressmaker.jpg"
-mdm.user = charles
-mdm.save!
-
 bataclan = Space.new(name: "Bataclan", location: "50 Boulevard Voltaire, 75011 Paris, France",
   description: "Concert venue close to République", price: 800)
 bataclan.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550218860/ebbaerrumkf6upbelayi.jpg"
@@ -116,13 +110,19 @@ philharmonie.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/
 philharmonie.user = charles
 philharmonie.save!
 
+mdm = Space.new(name: "My Dressmaker Showroom", location: "13 Rue de Charonne, 75011 Paris, France",
+  description: "blablabla", price: 400 )
+mdm.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550549844/mydressmaker.jpg"
+mdm.user = charles
+mdm.save!
+
 citemode = Space.new(name: "Cité de la mode", location: "34 Quai d'Austerlitz, 75013 Paris, France",
   description: "blablabla", price: 400 )
 citemode.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550549600/citemode.jpg"
 citemode.user = charles
 citemode.save!
 
-legraverand = Space.new(name: "Boutique Legraverand", location: "24, rue de Chaligny, 75012 Paris, France",
+legraverand = Space.new(name: "Boutique Legraverand", location: "24, rue Chaligny, 75012 Paris, France",
   description: "blablabla", price: 400 )
 legraverand.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550550633/legraverand.jpg"
 legraverand.user = charles
