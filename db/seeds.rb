@@ -45,13 +45,13 @@ george.save!
 puts "Creating Spaces..."
 
 louvre = Space.new(name: "Le Louvre", location: "1 rue de Rivoli, 75001 Paris",
-  description: "The most famous museum in the world", price: 4000)
+  description: "The most famous museum in the world - a real gobsmacker", price: 4000)
 louvre.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550218024/xzwwjuitm7fx9ksolw82.jpg"
 louvre.user = charles
 louvre.save!
 
 stgm = Space.new(name: "Saint-Germain Store", location: "178, Boulevard Saint-Germain, 75006 Paris, France",
-  description: "blablabla", price: 400 )
+  description: "This road has been made famous hosting some amazing boutique shops", price: 400 )
 stgm.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550550213/popupstore.jpg"
 stgm.user = charles
 stgm.save!
@@ -81,7 +81,7 @@ palais.user = charles
 palais.save!
 
 jcqm = Space.new(name: "Jacquemart-André", location: "158 Boulevard Haussmann, 75008 Paris, France",
-  description: "blablabla", price: 400 )
+  description: "The Musée Jacquemart-André is a private museum located at 158 Boulevard Haussmann in the 8th arrondissement of Paris.", price: 400 )
 jcqm.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550550427/jacquemartandre.jpg"
 jcqm.user = charles
 jcqm.save!
@@ -99,7 +99,7 @@ flv.user = charles
 flv.save!
 
 mauve = Space.new(name: "Tiny boutique in Convention", location: "75, rue des entrepreneurs",
-  description: "blablabla", price: 400 )
+  description: "A comfortable feel makes this a romantic boutique that is sure to seperate clients from their money", price: 400 )
 mauve.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550550367/mauve.jpg"
 mauve.user = charles
 mauve.save!
@@ -111,25 +111,25 @@ philharmonie.user = charles
 philharmonie.save!
 
 mdm = Space.new(name: "My Dressmaker Showroom", location: "13 Rue de Charonne, 75011 Paris, France",
-  description: "blablabla", price: 400 )
+  description: "Originally started by e-commerce entrepreneur Romaine - this venue is famous for showcasing the most elegant and beautiful female articles this world has ever seen", price: 400 )
 mdm.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550549844/mydressmaker.jpg"
 mdm.user = charles
 mdm.save!
 
 citemode = Space.new(name: "Cité de la mode", location: "34 Quai d'Austerlitz, 75013 Paris, France",
-  description: "blablabla", price: 400 )
+  description: "The City of Fashion and Design, is a building located at the site of the old general storehouses on the quai d'Austerlitz in Paris.", price: 400 )
 citemode.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550549600/citemode.jpg"
 citemode.user = charles
 citemode.save!
 
 legraverand = Space.new(name: "Boutique Legraverand", location: "24, rue Chaligny, 75012 Paris, France",
-  description: "blablabla", price: 400 )
+  description: "This amazing Boutique showcases some rare and unique items - ideal to showcase your work", price: 400 )
 legraverand.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550550633/legraverand.jpg"
 legraverand.user = charles
 legraverand.save!
 
 perchoir = Space.new(name: "Le Perchoir", location: "14 Rue Crespin du Gast, 75011 Paris, France",
-  description: "blablabla", price: 400 )
+  description: "This enormously popular bar in Menilmontant has a huge rooftop with a 360 degree view of the capital.", price: 400 )
 perchoir.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550549723/perchoir.jpg"
 perchoir.user = charles
 perchoir.save!
