@@ -3,14 +3,15 @@ class SpacesController < ApplicationController
   before_action :set_space, only: [:show, :edit, :update, :destroy]
 
   def index
-    @spaces = policy_scope(Space).order(created_at: :desc)
+    if params[:city]
+      @spaces = policy_scope(Space).order(created_at: :desc).where("location ILIKE ?", "%#{params[:city]}%")
+    else
+      @spaces = policy_scope(Space).order(created_at: :desc)
+    end
     # authorize @space
     # @spaces = Space.all
     @markers = @spaces.map do |space|
-      {
-        lng: space.longitude,
-        lat: space.latitude
-      }
+      { lng: space.longitude, lat: space.latitude }
     end
   end
 
