@@ -1,18 +1,20 @@
-<div class="container">
+<div class="main-container">
+  <div class="container">
 
-<div class="prof-card-product">
-  <%= cl_image_tag @user.photo, class: "avatar-lg" %>
-  <div class="prof-card-product-infos">
-    <p>
-    <%= link_to "Edit Details", edit_user_registration_path %>
-    </p>
-    <p>
-    <%= link_to "Add Space", new_space_path %>
-    </p>
-    <p>
-    <%= link_to "Home", root_path %>
-    </p>
+  <div class="prof-card-product">
+    <%= cl_image_tag @user.photo, class: "avatar-lg" %>
+    <div class="prof-card-product-infos">
+      <p>
+      <%= link_to "Edit Details", edit_user_registration_path %>
+      </p>
+      <p>
+      <%= link_to "Add Space", new_space_path %>
+      </p>
+      <p>
+      <%= link_to "Home", root_path %>
+      </p>
+    </div>
   </div>
-</div>
 
+  </div>
 </div>
