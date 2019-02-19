@@ -18,7 +18,7 @@
         <div class="dropdown">
           <div class="navbar-wagon-link" data-toggle= "dropdown">Messages</div>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <% if @bookings.nil? %>
+            <% if @bookings.blank? %>
               <li>You have no bookings or messages yet</li>
             <% else %>
               <% @bookings.each do |booking| %>
