@@ -20,15 +20,9 @@ class MessagesController < ApplicationController
     authorize @message
     @message.save
     if @message.save
-      respond_to do |format|
-        format.html { redirect_to booking_messages_path(@booking) }
-        format.js
-      end
+      redirect_to booking_messages_path(@booking)
     else
-      respond_to do |format|
-        format.html { render :new }
-        format.js
-      end
+      render :new
     end
   end
 end
