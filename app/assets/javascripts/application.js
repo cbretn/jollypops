@@ -2,6 +2,7 @@
 //= require jquery
 //= require_tree .
 
+
 window.onclick = function() {
   var tl = new TimelineLite({ delay: 1 }),
     firstBg = document.querySelectorAll(".text__first-bg"),
@@ -30,4 +31,4 @@ $(window).on('load', function() {
     );
   });
 });
-
+*/
