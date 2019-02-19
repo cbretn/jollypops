@@ -21,3 +21,12 @@
   top: 0 !important;
 }
 
+.mapboxgl-popup {
+  max-width: 300px;
+  padding: 0;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
