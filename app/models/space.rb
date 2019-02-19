@@ -9,6 +9,7 @@ class Space < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :tags, through: :space_tags
 
   mount_uploader :photo, PhotoUploader, dependent: :destroy
   geocoded_by :location

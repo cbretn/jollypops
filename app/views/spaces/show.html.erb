@@ -10,6 +10,11 @@
       <p>Location: <%= @space.location %></p>
       <p>Price: <%= @space.price %></p>
       <p>Description: <%= @space.description %></p>
+      <ul class="tags-list">
+        <% @spacetags.each do |spacetag| %>
+          <li class="tag"><%= spacetag.tag.title %></li>
+        <% end %>
+      </ul>
     </div>
 
     </div>
