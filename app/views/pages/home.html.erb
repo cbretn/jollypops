@@ -11,15 +11,18 @@
           <h2>Pop-up locations for every occasion</h2><br><br><br><br>
           <p>Search in our wide selection of spaces in the busiest neighbourhoods</p><br>
           <div class="main-search">
-            <form class="form-inline">
+            <%= form_tag spaces_path, method: :get, class:"form-inline" do %>
               <label class="sr-only">City</label>
-              <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Paris">
-              <label class="sr-only" for="inlineFormInputName2">Dates</label>
+              <%= text_field_tag :city,
+                params[:city],
+                class: "form-control",
+                placeholder: "Paris"
+              %>
               <input type="date" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="01/01/2019">
               <label class="sr-only" for="inlineFormInputName2">Dates</label>
               <input type="date" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="01/01/2019">
-              <%= link_to "submit", spaces_path, class: "btn btn-primary" %>
-            </form>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            <% end %>
           </div>
         </div>
       </div>
