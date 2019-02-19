@@ -2,8 +2,9 @@
 //= require jquery
 //= require_tree .
 
-/*window.onclick = function() {
-  const tl = new TimelineLite({ delay: 1 }),
+
+window.onclick = function() {
+  var tl = new TimelineLite({ delay: 1 }),
     firstBg = document.querySelectorAll(".text__first-bg"),
     secBg = document.querySelectorAll(".text__second-bg"),
     word = document.querySelectorAll(".text__word");

@@ -1,6 +1,6 @@
-<div class="container">
-  <h1>Messages for the booking at <%= @booking.space.name %></h1>
-  <div id="notifications">
+<div class="main-container">
+  <div class="container message-container" id="notifications">
+    <h1>Messages for the booking at <%= @booking.space.name %></h1>
     <% @messages.each do |message| %>
       <% if message.from.id == current_user.id %>
         <div class="notification-from">
@@ -21,6 +21,6 @@
       <%= f.submit %>
     <% end %>
   </div>
-  <%= link_to "back to booking", space_booking_path(@booking.space, @booking ) %>
+  <%= link_to "back to booking", space_booking_path(@booking.space, @booking),:class => 'btn-medium' %>
+  </div>
 </div>
-

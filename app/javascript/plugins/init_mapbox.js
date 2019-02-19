@@ -13,8 +13,11 @@ const buildMap = () => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // <-- add this
+
     new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup)
       .addTo(map);
   });
 };
@@ -29,6 +32,7 @@ const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
+
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
   }

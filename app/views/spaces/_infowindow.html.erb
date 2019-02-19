@@ -1,0 +1,22 @@
+<div class="col-xs-12 col-sm-6 col-md-4">
+  <%= link_to space_path(space) do %>
+
+  <!-- Post-->
+  <div class="post-module">
+    <!-- Thumbnail-->
+    <div class="thumbnail" >
+      <div class="date">
+
+      </div><img src="<%= space.photo %>"/>
+    </div>
+    <!-- Post Content-->
+    <div class="post-content">
+      <div class="category">Click for more info</div>
+      <h1 class="title"><%= space.name %></h1>
+      <h2 class="sub_title"></h2>
+      <p class="description"><%= space.description %></p>
+
+      <% end %>
+    </div>
+  </div>
+</div>
