@@ -1,8 +1,22 @@
-<h1>Reviews</h1>
-<% @reviews.each do |review| %>
+<div class="main-container">
+  <div class="container">
+    <h1>Reviews</h1>
+      <div class="row">
+        <% @reviews.each do |review| %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="container-review">
+              <%= cl_image_tag review.user.photo, class: "avatar" %>
+              <p><%= review.content %></p3>
+              <p>
+                Written by: <%= review.user.first_name %> <%= review.user.last_name %><br><%= review.created_at %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+      </div>
 
-<p><%= review.content %></p3>
-<p>written by <%= review.user.email %> on <%= review.created_at %></p>
-<% end %>
-<%= link_to "Add a review", new_space_review_path(@space) %>
-<%= link_to "Back to space", space_path(@space) %>
+
+    <%= link_to "Add a review", new_space_review_path(@space), :class => "btn-medium" %>
+    <%= link_to "Back to space", space_path(@space), :class => "btn-medium" %>
+  </div>
+</div>

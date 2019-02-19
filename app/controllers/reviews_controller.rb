@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     authorize @review
     if @review.save!
-      redirect_to space_path(@space)
+      redirect_to space_reviews_path(@space)
     else
       render :new
     end
