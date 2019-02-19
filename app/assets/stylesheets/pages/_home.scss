@@ -2,7 +2,9 @@
 
 .main-container{
   width: 100%;
-  height: calc(100vh - 70px);
+  // height: calc(100vh - 120px);
+  margin-top: 70px;
+  margin-bottom: 50px;
 }
 #main-banner {
   background-image: asset-url('popup-background.png');
