@@ -3,12 +3,33 @@
   list-style: none;
 }
 
+.tags-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+.tags-list li {
+  float: left;
+}
+
 .tag {
-  background-color: grey;
+  margin: 3px;
+  background-color: white;
+  color: black;
+  border: 1px solid #999999;
+  padding: 5px 15px;
+  border-radius: 50px;
   font-weight: lighter;
-  border: solid 1px white;
-  padding: 1px;
-  width: 70px;
-  text-align: center;
-  border-radius: 10px;
+  opacity: 0.6;
+  // padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.tag:hover {
+  color: black;
+  opacity: 1;
+  text-decoration: none;
 }
